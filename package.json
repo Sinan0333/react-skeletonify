@@ -1,5 +1,5 @@
 {
-  "name": "react-smart-skeleton",
+  "name": "react-skeletonify",
   "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -25,11 +25,11 @@
   "description": "A lightweight React package to add smart skeleton loaders to any component",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Sinan0333/react-smart-skeleton"
+    "url": "https://github.com/Sinan0333/react-skeletonify"
   },
-  "homepage": "https://github.com/Sinan0333/react-smart-skeleton#readme",
+  "homepage": "https://github.com/Sinan0333/react-skeletonify#readme",
   "bugs": {
-    "url": "https://github.com/Sinan0333/react-smart-skeleton/issues"
+    "url": "https://github.com/Sinan0333/react-skeletonify/issues"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

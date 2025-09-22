@@ -1,4 +1,4 @@
-# React Smart Skeleton
+# React Skeletonify
 
 A lightweight and flexible skeleton loading component for React ⚡.  
 Easily add animated skeleton loaders to any UI element.
@@ -8,7 +8,7 @@ Easily add animated skeleton loaders to any UI element.
 ## 🚀 Installation
 
 ```bash
-npm install react-smart-skeleton
+npm install react-skeletonify
 # or
-yarn add react-smart-skeleton
+yarn add react-skeletonify
 ```
