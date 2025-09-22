@@ -1,4 +1,3 @@
-// src/SkeletonWrapper.tsx
 import React from "react";
 import SkeletonElement from "./SkeletonElement";
 

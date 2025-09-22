@@ -1,0 +1,35 @@
+.Rss-skeleton {
+  animation: Rss-skeleton-loading 1s linear infinite alternate;
+  background-color: hsl(200, 20%, 90%);
+  color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  pointer-events: none !important;
+  border-radius: 8px !important;
+}
+
+.Rss-skeleton img {
+  opacity: 0;
+}
+
+.Rss-skeleton a {
+  text-decoration: none !important;
+  color: transparent !important;
+}
+
+.Rss-skeleton-text {
+  margin-top: 5px !important;
+}
+
+.Rss-skeleton::placeholder {
+  color: transparent !important;
+}
+
+@keyframes Rss-skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}

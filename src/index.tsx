@@ -1,4 +1,3 @@
-import SkeletonWrapper from "./SkeletonWrapper";
-import "./skeleton.css";
+import "./styles/skeleton.css";
 
-export { SkeletonWrapper };
+export { default as SkeletonWrapper } from "./components/SkeletonWrapper";

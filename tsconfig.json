@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2019",
     "module": "ESNext",
-    "jsx": "react-jsx",          // 👈 this fixes the TSX error
+    "jsx": "react-jsx",          
     "declaration": true,
     "declarationDir": "dist",
     "emitDeclarationOnly": false,

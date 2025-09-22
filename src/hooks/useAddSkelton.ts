@@ -5,35 +5,38 @@ import createLeafNode from "../utils/create-leaf-node";
 
 function useAddSkelton() {
   const addSkeleton = (node: React.ReactNode): React.ReactNode => {
-    if (!React.isValidElement(node)) return createNodeWrapper(node);
+    if (!React.isValidElement(node)) return createNodeWrapper(node as any);
 
-    const hasChildren = React.Children.count(node.props.children) > 0;
-    const isValidChildren = typeof node.props.children !== "string";
-    const nodeType = typeof node.type;
+    const element = node as React.ReactElement<any>;
+    const { children } = element.props;
+    const elementType = element.type;
 
-    if (nodeType === "function") {
-      return addSkeleton(node.type(node.props));
+    const hasChildren = React.Children.count(children) > 0;
+    const isValidChildren = typeof children !== "string";
+
+    if (typeof elementType === "function") {
+      const rendered = (elementType as any)(element.props);
+      return addSkeleton(rendered);
     }
-    if (TEXT_TAGS.includes(node.type)) {
-      return createLeafNode({ node, className: "skeleton skeleton-text" });
+
+    if (TEXT_TAGS.includes(elementType)) {
+      return createLeafNode(node, "Rss-skeleton-text");
     }
-    if (node.type === "img") {
-      return createNodeWrapper(node);
+
+    if (elementType === "img") {
+      return createNodeWrapper(element);
     }
 
     if (hasChildren && isValidChildren) {
-      const childWithSkeletons = React.Children.map(
-        node.props.children,
-        addSkeleton
-      );
+      const childWithSkeletons = React.Children.map(children, addSkeleton);
 
-      return React.cloneElement(node, {
-        ...node.props,
+      return React.cloneElement(element, {
+        ...element.props,
         children: childWithSkeletons,
-      });
-    } else {
-      createLeafNode({ node });
+      } as typeof element.props);
     }
+
+    return createLeafNode(element);
   };
 
   return addSkeleton;
