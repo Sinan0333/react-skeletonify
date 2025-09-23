@@ -15,10 +15,13 @@
   "keywords": [
     "react",
     "skeleton",
-    "loader",
-    "skeleton-ui",
-    "react-component",
-    "loading-ui"
+    "skeleton loader",
+    "loading state",
+    "placeholder",
+    "react component",
+    "react ui",
+    "react skeleton loader",
+    "react shimmer"
   ],
   "author": "Sinan sinan.m.p333@gmail.com",
   "license": "MIT",

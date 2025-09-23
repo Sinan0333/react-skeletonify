@@ -4,8 +4,7 @@
 
 # React Skeletonify
 
-A lightweight and flexible skeleton loading component for React ⚡.  
-Easily add animated skeleton loaders to any UI element.
+React Skeletonify is a lightweight React skeleton loader component. Create beautiful loading placeholders for text, images, buttons, or cards with smooth animations.
 
 ## 🎮 Live Demo
 
