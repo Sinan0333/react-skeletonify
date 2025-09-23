@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/react-skeletonify.svg)](https://badge.fury.io/js/angular2-expandable-list)
+[![npm version](https://badge.fury.io/js/react-skeletonify.svg)](https://www.npmjs.com/package/react-skeletonify)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 # React Skeletonify
@@ -6,7 +6,9 @@
 A lightweight and flexible skeleton loading component for React ⚡.  
 Easily add animated skeleton loaders to any UI element.
 
----
+## 🎮 Live Demo
+
+👉 [Try it here](https://playcode.io/2556254)
 
 ## ✨ Features
 
@@ -40,7 +42,7 @@ function App() {
             width: "50px",
             borderRadius: "100%",
           }}></div>
-        <h6>React Skeltonify</h6>
+        <h6>React Skeletonify</h6>
         <p>Example React component for creating loading skeleton</p>
       </div>
     </SkeletonWrapper>
