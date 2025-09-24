@@ -1,6 +1,7 @@
 import React from "react";
 import SkeletonElement from "./SkeletonElement";
 import { SkeletonConfig } from "../context/skeleton-config";
+import { useSkeleton } from "../context/SkeletonContext";
 
 interface SkeletonWrapperProps {
   loading: boolean;
@@ -8,12 +9,17 @@ interface SkeletonWrapperProps {
   config?: Partial<SkeletonConfig>;
 }
 
-const SkeletonWrapper: React.FC<SkeletonWrapperProps> = ({
-  loading,
-  children,
-}) => {
+const SkeletonWrapper: React.FC<SkeletonWrapperProps> = (props) => {
+  const { loading, children, config } = props;
+  const mainConfig = useSkeleton();
+
+  const mergedConfig = React.useMemo(
+    () => ({ ...mainConfig, ...config }),
+    [config, mainConfig]
+  );
+
   if (loading) {
-    return <SkeletonElement>{children}</SkeletonElement>;
+    return <SkeletonElement config={mergedConfig}>{children}</SkeletonElement>;
   }
   return <>{children}</>;
 };

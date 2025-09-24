@@ -2,8 +2,10 @@ import React from "react";
 import createNodeWrapper from "../utils/create-node-wrapper";
 import { TEXT_TAGS } from "../constants/tags";
 import createLeafNode from "../utils/create-leaf-node";
+import { SkeletonConfig } from "../context/skeleton-config";
 
-function useAddSkelton() {
+function useAddSkelton(config: SkeletonConfig) {
+  const { mode, className, exceptTags, exceptTagGroups } = config;
   const addSkeleton = (node: React.ReactNode): React.ReactNode => {
     if (!React.isValidElement(node)) return createNodeWrapper(node as any);
 
