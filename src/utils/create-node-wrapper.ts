@@ -9,7 +9,7 @@ export default function createNodeWrapper(
   return createElement(
     "div",
     {
-      className: (node?.props?.className || "") + " Rss-skeleton",
+      className: (node?.props?.className || "") + className,
     },
     node
   );
