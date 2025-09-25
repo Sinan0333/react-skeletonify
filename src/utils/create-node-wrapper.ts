@@ -1,8 +1,9 @@
-import React, { createElement } from "react";
+import React, { createElement, CSSProperties } from "react";
 
 export default function createNodeWrapper(
   node: React.ReactElement<any>,
-  className: string
+  className: string,
+  style: CSSProperties
 ) {
   if (!node) return null;
 
@@ -10,6 +11,10 @@ export default function createNodeWrapper(
     "div",
     {
       className: (node?.props?.className || "") + className,
+      style: {
+        ...node?.props?.style,
+        ...style,
+      },
     },
     node
   );
