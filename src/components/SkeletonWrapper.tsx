@@ -26,7 +26,7 @@ const SkeletonWrapper: React.FC<SkeletonWrapperProps> = (props) => {
   if (loading) {
     return <SkeletonElement config={config}>{children}</SkeletonElement>;
   }
-  return <>{children}</>;
+  return children;
 };
 
 export default SkeletonWrapper;

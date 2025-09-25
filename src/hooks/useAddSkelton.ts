@@ -21,14 +21,14 @@ function useAddSkelton(config: SkeletonConfig) {
 
     if (typeof elementType === "string") {
       if (exceptTags.includes(elementType)) {
-        return node;
+        return element;
       }
       const isRestrictedGroupTag = checkTagInGroup(
         elementType,
         exceptTagGroups
       );
 
-      if (isRestrictedGroupTag) return node;
+      if (isRestrictedGroupTag) return element;
     }
 
     const hasChildren = React.Children.count(children) > 0;
@@ -39,8 +39,8 @@ function useAddSkelton(config: SkeletonConfig) {
       return addSkeleton(rendered);
     }
 
-    if (TEXT_TAGS.includes(elementType)) {
-      return createLeafNode(node, CLASS_NAME + "react-skeletonify-text", style);
+    if (TEXT_TAGS.includes(elementType) && !isValidChildren) {
+      return createLeafNode(element, CLASS_NAME + "react-skeletonify-text", style);
     }
 
     if (elementType === "img") {
