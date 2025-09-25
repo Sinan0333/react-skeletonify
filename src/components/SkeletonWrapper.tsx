@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import SkeletonElement from "./SkeletonElement";
 import { SkeletonConfig } from "../context/skeleton-config";
 import { useSkeleton } from "../context/SkeletonContext";
@@ -13,7 +13,7 @@ const SkeletonWrapper: React.FC<SkeletonWrapperProps> = (props) => {
   const { loading, children, config } = props;
   const mainConfig = useSkeleton();
 
-  const mergedConfig = React.useMemo(
+  const mergedConfig: SkeletonConfig = useMemo(
     () => ({ ...mainConfig, ...config }),
     [config, mainConfig]
   );
