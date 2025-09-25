@@ -4,9 +4,10 @@ import { TEXT_TAGS } from "../constants/tags";
 import createLeafNode from "../utils/create-leaf-node";
 import { SkeletonConfig } from "../context/skeleton-config";
 import createStyle from "../utils/create-style";
+import checkTagInGroup from "../utils/check-tag-in-group";
 
 function useAddSkelton(config: SkeletonConfig) {
-  const { className, exceptTags } = config;
+  const { className, exceptTags, exceptTagGroups } = config;
   const CLASS_NAME = ` react-skeletonify ${className} `;
   const style = createStyle(config);
 
@@ -18,8 +19,16 @@ function useAddSkelton(config: SkeletonConfig) {
     const { children } = element.props;
     const elementType = element.type;
 
-    if (typeof elementType === "string" && exceptTags.includes(elementType)) {
-      return node;
+    if (typeof elementType === "string") {
+      if (exceptTags.includes(elementType)) {
+        return node;
+      }
+      const isRestrictedGroupTag = checkTagInGroup(
+        elementType,
+        exceptTagGroups
+      );
+
+      if (isRestrictedGroupTag) return node;
     }
 
     const hasChildren = React.Children.count(children) > 0;
