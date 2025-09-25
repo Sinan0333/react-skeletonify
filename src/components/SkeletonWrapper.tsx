@@ -18,7 +18,7 @@ const SkeletonWrapper: React.FC<SkeletonWrapperProps> = (props) => {
     () => ({
       ...mainConfig,
       ...overrideConfig,
-      style: { ...mainConfig.style, ...style },
+      style: { ...mainConfig.style, ...overrideConfig?.style, ...style },
     }),
     [overrideConfig, mainConfig]
   );
