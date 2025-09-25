@@ -7,7 +7,7 @@ export default function createLeafNode(
 ): React.ReactElement {
   return React.cloneElement(node, {
     ...node.props,
-    className: (node.props.className || "") + className,
+    className: className + (node.props.className || ""),
     style: {
       ...node.props.style,
       ...style,

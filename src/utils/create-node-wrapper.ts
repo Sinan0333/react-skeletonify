@@ -10,7 +10,7 @@ export default function createNodeWrapper(
   return createElement(
     "div",
     {
-      className: (node?.props?.className || "") + className,
+      className: className + (node?.props?.className || ""),
       style: {
         ...node?.props?.style,
         ...style,

@@ -8,7 +8,7 @@ import checkTagInGroup from "../utils/check-tag-in-group";
 
 function useAddSkelton(config: SkeletonConfig) {
   const { className, exceptTags, exceptTagGroups } = config;
-  const CLASS_NAME = ` react-skeletonify ${className} `;
+  const CLASS_NAME = `react-skeletonify ${className} `;
   const style = createStyle(config);
 
   const addSkeleton = (node: React.ReactNode): React.ReactNode => {
