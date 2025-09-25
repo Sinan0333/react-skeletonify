@@ -4,13 +4,13 @@ export type SkeletonConfig = {
   border: string;
   borderRadius: string | number;
   className?: string;
-  style: "animation-1" | "animation-2 | animation-3";
+  style: "animation-1" | "animation-2" | "animation-3";
   exceptTags: string[];
   exceptTagGroups: string[];
 };
 
 export const defaultValues: SkeletonConfig = {
-  animationSpeed: 1,
+  animationSpeed: 3,
   background: "#aeaeae no-repeat",
   border: "none",
   borderRadius: "8px",
