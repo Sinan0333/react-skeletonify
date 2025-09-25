@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { CSSProperties, useMemo } from "react";
 import SkeletonElement from "./SkeletonElement";
 import { SkeletonConfig } from "../context/skeleton-config";
 import { useSkeleton } from "../context/SkeletonContext";
@@ -6,20 +6,25 @@ import { useSkeleton } from "../context/SkeletonContext";
 interface SkeletonWrapperProps {
   loading: boolean;
   children: React.ReactNode;
-  config?: Partial<SkeletonConfig>;
+  overrideConfig?: Partial<SkeletonConfig>;
+  style?: CSSProperties;
 }
 
 const SkeletonWrapper: React.FC<SkeletonWrapperProps> = (props) => {
-  const { loading, children, config } = props;
+  const { loading, children, overrideConfig, style } = props;
   const mainConfig = useSkeleton();
 
-  const mergedConfig: SkeletonConfig = useMemo(
-    () => ({ ...mainConfig, ...config }),
-    [config, mainConfig]
+  const config: SkeletonConfig = useMemo(
+    () => ({
+      ...mainConfig,
+      ...overrideConfig,
+      style: { ...mainConfig.style, ...style },
+    }),
+    [overrideConfig, mainConfig]
   );
 
   if (loading) {
-    return <SkeletonElement config={mergedConfig}>{children}</SkeletonElement>;
+    return <SkeletonElement config={config}>{children}</SkeletonElement>;
   }
   return <>{children}</>;
 };

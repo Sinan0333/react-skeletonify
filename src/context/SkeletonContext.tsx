@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, CSSProperties, useContext } from "react";
 import { SkeletonConfig, defaultValues } from "./skeleton-config";
 
 const SkeletonContext = createContext<SkeletonConfig>(defaultValues);
@@ -6,12 +6,14 @@ const SkeletonContext = createContext<SkeletonConfig>(defaultValues);
 export const SkeletonProvider = ({
   children,
   value,
+  style,
 }: {
   children: React.ReactNode;
   value?: Partial<SkeletonConfig>;
+  style?: CSSProperties;
 }) => {
   return (
-    <SkeletonContext.Provider value={{ ...defaultValues, ...value }}>
+    <SkeletonContext.Provider value={{ ...defaultValues, ...value, style }}>
       {children}
     </SkeletonContext.Provider>
   );

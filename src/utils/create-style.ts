@@ -27,13 +27,14 @@ const getAnimation = (
 };
 
 export default (config: SkeletonConfig) => {
-  const { animationSpeed, background, border, borderRadius, animation } =
+  const { animationSpeed, background, border, borderRadius, animation, style } =
     config;
 
   const skeletonAnimation: CSSProperties = {
     ...getAnimation(animation, animationSpeed, background),
     border,
     borderRadius,
+    ...style,
   };
 
   return skeletonAnimation;

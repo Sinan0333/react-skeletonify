@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 export const HTML_TAG_GROUPS = [
   "TEXT_TAGS",
   "STRUCTURE_TAGS",
@@ -18,6 +20,7 @@ export type SkeletonConfig = {
   border: string;
   borderRadius: string | number;
   className?: string;
+  style?: CSSProperties;
   animation: "animation-1" | "animation-2" | "animation-3";
   exceptTags: string[];
   exceptTagGroups: HtmlTagGroup[];
@@ -29,6 +32,7 @@ export const defaultValues: SkeletonConfig = {
   border: "none",
   borderRadius: "8px",
   className: "",
+  style: {},
   animation: "animation-1",
   exceptTags: [],
   exceptTagGroups: [],
