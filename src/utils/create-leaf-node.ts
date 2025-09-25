@@ -2,7 +2,7 @@ import React from "react";
 
 export default function createLeafNode(
   node: React.ReactElement<any>,
-  className: string = ""
+  className: string
 ): React.ReactElement {
   return React.cloneElement(node, {
     ...node.props,
