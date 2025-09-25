@@ -1,13 +1,12 @@
 export type SkeletonConfig = {
-  animationSpeed?: number;
-  background?: string;
-  border?: string;
-  borderRadius?: string | number;
-  mode?: "light" | "dark";
+  animationSpeed: number;
+  background: string;
+  border: string;
+  borderRadius: string | number;
   className?: string;
-  style?: "default" | "custom";
-  exceptTags?: string[];
-  exceptTagGroups?: string[];
+  style: "animation-1" | "animation-2";
+  exceptTags: string[];
+  exceptTagGroups: string[];
 };
 
 export const defaultValues: SkeletonConfig = {
@@ -15,9 +14,8 @@ export const defaultValues: SkeletonConfig = {
   background: "hsl(200, 20%, 90%)",
   border: "none",
   borderRadius: "8px",
-  mode: "light",
   className: "",
-  style: "default",
+  style: "animation-1",
   exceptTags: [],
   exceptTagGroups: [],
 };
