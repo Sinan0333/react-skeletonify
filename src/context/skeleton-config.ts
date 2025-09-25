@@ -18,7 +18,7 @@ export type SkeletonConfig = {
   border: string;
   borderRadius: string | number;
   className?: string;
-  style: "animation-1" | "animation-2" | "animation-3";
+  animation: "animation-1" | "animation-2" | "animation-3";
   exceptTags: string[];
   exceptTagGroups: HtmlTagGroup[];
 };
@@ -29,7 +29,7 @@ export const defaultValues: SkeletonConfig = {
   border: "none",
   borderRadius: "8px",
   className: "",
-  style: "animation-1",
+  animation: "animation-1",
   exceptTags: [],
   exceptTagGroups: [],
 };

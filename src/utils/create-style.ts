@@ -2,11 +2,11 @@ import { CSSProperties } from "react";
 import { SkeletonConfig } from "../context/skeleton-config";
 
 const getAnimation = (
-  style: string,
+  animation: string,
   animationSpeed: number,
   background: string
 ) => {
-  switch (style) {
+  switch (animation) {
     case "animation-1":
       return {
         animation: `react-skeletonify-animation-1 ${animationSpeed}s ease-in-out infinite `,
@@ -27,13 +27,14 @@ const getAnimation = (
 };
 
 export default (config: SkeletonConfig) => {
-  const { animationSpeed, background, border, borderRadius, style } = config;
+  const { animationSpeed, background, border, borderRadius, animation } =
+    config;
 
-  const skeletonStyle: CSSProperties = {
-    ...getAnimation(style, animationSpeed, background),
+  const skeletonAnimation: CSSProperties = {
+    ...getAnimation(animation, animationSpeed, background),
     border,
     borderRadius,
   };
 
-  return skeletonStyle;
+  return skeletonAnimation;
 };
