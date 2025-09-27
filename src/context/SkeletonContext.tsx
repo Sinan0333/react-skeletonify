@@ -31,8 +31,6 @@ export const SkeletonProvider: React.FC<SkeletonProviderProps> = (props) => {
     [animation, background, config, style]
   );
 
-  console.log(value);
-
   return (
     <SkeletonContext.Provider value={value}>
       {children}
