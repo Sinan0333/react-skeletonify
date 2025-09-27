@@ -9,8 +9,8 @@ export default function createLeafNode(
     ...node.props,
     className: className + (node.props.className || ""),
     style: {
-      ...node.props.style,
       ...style,
+      ...node.props.style,
     },
   } as typeof node.props);
 }

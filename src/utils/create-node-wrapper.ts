@@ -12,8 +12,8 @@ export default function createNodeWrapper(
     {
       className: className + (node?.props?.className || ""),
       style: {
-        ...node?.props?.style,
         ...style,
+        ...node?.props?.style,
       },
     },
     node
