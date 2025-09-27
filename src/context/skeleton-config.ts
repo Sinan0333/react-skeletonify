@@ -35,7 +35,7 @@ export type SkeletonConfig = {
 
 export const defaultValues: SkeletonConfig = {
   animationSpeed: 3,
-  background: "#aeaeae no-repeat",
+  background: "#aeaeae",
   border: "none",
   borderRadius: "0",
   textTagsMargin: "0",
