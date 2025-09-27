@@ -13,25 +13,28 @@ import {
 const SkeletonContext = createContext<SkeletonConfig>(defaultValues);
 interface SkeletonProviderProps {
   children: React.ReactNode;
-  value?: Partial<SkeletonConfig>;
+  config?: Partial<SkeletonConfig>;
   style?: CSSProperties;
 }
 
 export const SkeletonProvider: React.FC<SkeletonProviderProps> = (props) => {
-  const { children, value, style } = props;
-  const { animation = defaultValues.animation, background } = value || {};
+  const { children, config, style } = props;
+  const { animation = defaultValues.animation, background } = config || {};
 
-  const config: SkeletonConfig = useMemo(() => {
-    return {
+  const value: SkeletonConfig = useMemo(
+    () => ({
       ...defaultValues,
-      ...value,
+      ...config,
       background: background ? background : defaultBackground[animation],
-      style: { ...defaultValues.style, ...value?.style, ...style },
-    };
-  }, [animation, background, value, style]);
+      style: { ...defaultValues.style, ...config?.style, ...style },
+    }),
+    [animation, background, config, style]
+  );
+
+  console.log(value);
 
   return (
-    <SkeletonContext.Provider value={config}>
+    <SkeletonContext.Provider value={value}>
       {children}
     </SkeletonContext.Provider>
   );
