@@ -28,7 +28,7 @@ export type SkeletonConfig = {
   textTagsMargin: string;
   className?: string;
   style?: CSSProperties;
-  animation: "animation-1" | "animation-2" | "animation-3";
+  animation: "animation-1" | "animation-2";
   exceptTags: string[];
   exceptTagGroups: HtmlTagGroup[];
 };
