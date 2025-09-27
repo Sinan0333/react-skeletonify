@@ -6,7 +6,6 @@
 .react-skeletonify img {
   opacity: 0;
 }
-
 .react-skeletonify a {
   text-decoration: none !important;
   color: transparent !important;
@@ -34,10 +33,10 @@ animation-delay: 0.5s; */
 }
 
 /* Animation 2 */
-/* animation: react-skeletonify-animation-2 2s infinite; */
+/* animation: react-skeletonify-animation-2 2s infinite;*/
 @keyframes react-skeletonify-animation-2 {
   100% {
-    transform: translateX(100%);
+    background-position: -100% 0;
   }
 }
 

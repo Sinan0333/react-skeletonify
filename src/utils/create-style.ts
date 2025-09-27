@@ -16,7 +16,9 @@ const getAnimation = (
     case "animation-2":
       return {
         animation: `react-skeletonify-animation-2 ${animationSpeed}s infinite`,
-        backgroundImage: background,
+        background: `linear-gradient(120deg, ${background} 30%, #f0f0f0 38%, #f0f0f0 40%, ${background} 48%)`,
+        backgroundSize: "200% 100%",
+        backgroundPosition: "100% 0",
       };
     case "animation-3":
       return {
