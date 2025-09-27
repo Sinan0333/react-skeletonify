@@ -15,7 +15,7 @@ export const HTML_TAG_GROUPS = [
 export type HtmlTagGroup = (typeof HTML_TAG_GROUPS)[number];
 
 export const defaultBackground = {
-  "animation-1": "#aeaeae no-repeat",
+  "animation-1": "#aeaeae",
   "animation-2": "#e5e5e5",
   "animation-3": "hsl(210, 20%, 90%)",
 };
