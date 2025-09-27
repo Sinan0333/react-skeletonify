@@ -1,13 +1,13 @@
 import React from "react";
 import createNodeWrapper from "../utils/create-node-wrapper";
-import { TEXT_TAGS } from "../constants/tags";
 import createLeafNode from "../utils/create-leaf-node";
 import { SkeletonConfig } from "../context/skeleton-config";
 import createStyle from "../utils/create-style";
 import checkTagInGroup from "../utils/check-tag-in-group";
+import isTextElement from "../utils/is-text-element";
 
 function useAddSkelton(config: SkeletonConfig) {
-  const { className, exceptTags, exceptTagGroups } = config;
+  const { className, exceptTags, exceptTagGroups, textTagsMargin } = config;
   const CLASS_NAME = `react-skeletonify ${className} `;
   const style = createStyle(config);
 
@@ -39,8 +39,13 @@ function useAddSkelton(config: SkeletonConfig) {
       return addSkeleton(rendered);
     }
 
-    if (TEXT_TAGS.includes(elementType) && !isValidChildren) {
-      return createLeafNode(element, CLASS_NAME + "react-skeletonify-text", style);
+    const isTextTag = isTextElement(elementType);
+
+    if (isTextTag) {
+      return createLeafNode(element, CLASS_NAME, {
+        ...style,
+        margin: textTagsMargin,
+      });
     }
 
     if (elementType === "img") {

@@ -19,6 +19,7 @@ export type SkeletonConfig = {
   background: string;
   border: string;
   borderRadius: string | number;
+  textTagsMargin: string;
   className?: string;
   style?: CSSProperties;
   animation: "animation-1" | "animation-2" | "animation-3";
@@ -31,6 +32,7 @@ export const defaultValues: SkeletonConfig = {
   background: "#aeaeae no-repeat",
   border: "none",
   borderRadius: "8px",
+  textTagsMargin: "",
   className: "",
   style: {},
   animation: "animation-1",
