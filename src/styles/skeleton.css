@@ -1,31 +1,48 @@
-.Rss-skeleton {
-  animation: Rss-skeleton-loading 1s linear infinite alternate;
-  background-color: hsl(200, 20%, 90%);
+.react-skeletonify {
   color: transparent !important;
-  border: none !important;
   outline: none !important;
   pointer-events: none !important;
-  border-radius: 8px !important;
 }
-
-.Rss-skeleton img {
+.react-skeletonify img {
   opacity: 0;
 }
-
-.Rss-skeleton a {
+.react-skeletonify a {
   text-decoration: none !important;
   color: transparent !important;
 }
-
-.Rss-skeleton-text {
+.react-skeletonify-text {
   margin-top: 5px !important;
 }
-
-.Rss-skeleton::placeholder {
+.react-skeletonify::placeholder {
   color: transparent !important;
 }
 
-@keyframes Rss-skeleton-loading {
+/* Animation 1 */
+/* animation: react-skeletonify-animation-1 3s ease-in-out infinite;
+animation-delay: 0.5s; */
+@keyframes react-skeletonify-animation-1 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animation 2 */
+/* animation: react-skeletonify-animation-2 2s infinite;*/
+@keyframes react-skeletonify-animation-2 {
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* Animation 3 */
+/* animation: react-skeletonify-animation-3 1s linear infinite alternate; */
+@keyframes react-skeletonify-animation-3 {
   0% {
     background-color: hsl(200, 20%, 80%);
   }
