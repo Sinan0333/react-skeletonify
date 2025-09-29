@@ -1,11 +1,16 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
 export default function createLeafNode(
   node: React.ReactElement<any>,
-  className: string = ""
+  className: string,
+  style: CSSProperties
 ): React.ReactElement {
   return React.cloneElement(node, {
     ...node.props,
-    className: (node.props.className || "") + " Rss-skeleton " + className,
+    className: className + (node.props.className || ""),
+    style: {
+      ...style,
+      ...node.props.style,
+    },
   } as typeof node.props);
 }
