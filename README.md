@@ -23,6 +23,11 @@ Unlike traditional static skeletons, **React Skeletonify** adapts to your compon
 
 👉 [Try it here](https://playcode.io/2556254)
 
+## 📚 Documentation
+
+For complete guides and examples check out the full documentation site:  
+👉 [React Skeletonify Documentation](https://react-skeletonify.sinan-dev.in)
+
 ## ✨ Features
 
 - 🎨 **Global & local configuration** with `SkeletonProvider` and `SkeletonWrapper`
