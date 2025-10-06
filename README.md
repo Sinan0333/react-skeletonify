@@ -1,8 +1,20 @@
-[![npm version](https://img.shields.io/npm/v/react-skeletonify.svg)](https://www.npmjs.com/package/react-skeletonify)
-[![npm downloads](https://img.shields.io/npm/dm/react-skeletonify.svg)](https://www.npmjs.com/package/react-skeletonify)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+<p align="center">
+  <img src="https://github.com/Sinan0333/react-skeletonify/tree/main/assets/logo.png?raw=true" alt="React Skeletonify Logo" width="120" />
+</p>
 
-# ⚡ React Skeletonify
+<p align="center">
+  <a href="https://www.npmjs.com/package/react-skeletonify">
+    <img src="https://img.shields.io/npm/v/react-skeletonify.svg" alt="npm version" />
+  </a>
+  <a href="https://www.npmjs.com/package/react-skeletonify">
+    <img src="https://img.shields.io/npm/dm/react-skeletonify.svg" alt="npm downloads" />
+  </a>
+  <a href="https://github.com/prettier/prettier">
+    <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" alt="code style: prettier" />
+  </a>
+</p>
+
+<h1 align="center">⚡ React Skeletonify</h1>
 
 A **lightweight and flexible skeleton loader** for React, built to make loading states feel smooth and natural.  
 Unlike traditional static skeletons, **React Skeletonify** adapts to your components dynamically — letting you configure animations, styles, and exclusions globally or per-component.

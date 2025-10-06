@@ -4,6 +4,7 @@ node_modules
 # Ignore source files (TypeScript, React components, etc.)
 src/
 !src/styles/skeleton.css  # Keep your skeleton CSS if it's imported from dist
+assets/
 
 # Build and dev files
 tsconfig.json
