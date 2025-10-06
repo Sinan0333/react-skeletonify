@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Sinan0333/react-skeletonify/tree/main/assets/logo.png?raw=true" alt="React Skeletonify Logo" width="120" />
+  <img src="https://raw.githubusercontent.com/Sinan0333/react-smart-skeleton/main/assets/logo.png" alt="React Skeletonify Logo" width="120" height="110" />
 </p>
 
 <p align="center">
