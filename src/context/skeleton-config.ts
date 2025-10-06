@@ -24,7 +24,7 @@ export type SkeletonConfig = {
   animationSpeed: number;
   background: string;
   border: string;
-  borderRadius: string | number;
+  borderRadius: string;
   textTagsMargin: string;
   className?: string;
   style?: CSSProperties;

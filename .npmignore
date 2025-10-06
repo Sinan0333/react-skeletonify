@@ -1,0 +1,39 @@
+# Ignore node_modules
+node_modules
+
+# Ignore source files (TypeScript, React components, etc.)
+src/
+!src/styles/skeleton.css  # Keep your skeleton CSS if it's imported from dist
+assets/
+
+# Build and dev files
+tsconfig.json
+tsup.config.ts
+package-lock.json
+
+# Logs and system files
+*.log
+.DS_Store
+
+# Git and editor configs
+.git
+.gitignore
+.vscode/
+.idea/
+
+# Test or example-related files (if added later)
+__tests__/
+tests/
+example/
+demo/
+stories/
+
+# Linting and formatting configs
+.eslintrc*
+eslint.config.js
+.prettierrc*
+.prettierignore
+
+# Environment files
+.env
+.env.*
