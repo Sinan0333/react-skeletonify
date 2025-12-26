@@ -4,7 +4,11 @@ import createLeafNode from "../utils/create-leaf-node";
 import { SkeletonConfig } from "../context/skeleton-config";
 import createStyle from "../utils/create-style";
 import checkTagInGroup from "../utils/check-tag-in-group";
-import isTextElement from "../utils/is-text-element";
+import {
+  isSkeletonIgnoreComponent,
+  isSkeletonKeepComponent,
+  isTextElement,
+} from "../utils/check-element";
 
 function useAddSkelton(config: SkeletonConfig) {
   const { className, exceptTags, exceptTagGroups, textTagsMargin } = config;
@@ -18,6 +22,9 @@ function useAddSkelton(config: SkeletonConfig) {
     const element = node as React.ReactElement<any>;
     const { children } = element.props;
     const elementType = element.type;
+
+    if (isSkeletonKeepComponent(elementType)) return element;
+    if (isSkeletonIgnoreComponent(elementType)) return null;
 
     if (typeof elementType === "string") {
       if (exceptTags.includes(elementType)) {
