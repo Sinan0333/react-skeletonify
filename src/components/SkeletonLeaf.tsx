@@ -25,7 +25,7 @@ const SkeletonLeaf: React.FC<SkeletonLeafProps> = (props) => {
     );
   }
 
-  return <>{children}</>;
+  return children;
 };
 
 export default SkeletonLeaf;
