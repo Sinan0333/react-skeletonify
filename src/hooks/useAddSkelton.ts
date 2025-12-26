@@ -7,6 +7,7 @@ import checkTagInGroup from "../utils/check-tag-in-group";
 import {
   isSkeletonIgnoreComponent,
   isSkeletonKeepComponent,
+  isSkeletonUniteComponent,
   isTextElement,
 } from "../utils/check-element";
 
@@ -25,6 +26,9 @@ function useAddSkelton(config: SkeletonConfig) {
 
     if (isSkeletonKeepComponent(elementType)) return element;
     if (isSkeletonIgnoreComponent(elementType)) return null;
+    if (isSkeletonUniteComponent(elementType)) {
+      return createLeafNode(element, CLASS_NAME, style);
+    }
 
     if (typeof elementType === "string") {
       if (exceptTags.includes(elementType)) {
