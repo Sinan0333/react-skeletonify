@@ -11,17 +11,13 @@ const SkeletonUnite: React.FC<SkeletonUniteProps> = (props) => {
 
   if (className && className.includes("react-skeletonify")) {
     return (
-      <div
-        className={className}
-        style={{
-          ...style,
-        }}>
+      <div className={className} style={style}>
         <div style={{ opacity: 0 }}>{children}</div>
       </div>
     );
   }
 
-  return <>{children}</>;
+  return children;
 };
 
 export default SkeletonUnite;
