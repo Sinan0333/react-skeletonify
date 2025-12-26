@@ -1,7 +1,7 @@
-import React, { CSSProperties, useMemo } from "react";
+import React, { CSSProperties } from "react";
 import SkeletonElement from "./SkeletonElement";
 import { SkeletonConfig } from "../context/skeleton-config";
-import { useSkeleton } from "../context/SkeletonContext";
+import createConfig from "../utils/create-config";
 
 interface SkeletonWrapperProps {
   loading: boolean;
@@ -12,16 +12,7 @@ interface SkeletonWrapperProps {
 
 const SkeletonWrapper: React.FC<SkeletonWrapperProps> = (props) => {
   const { loading, children, overrideConfig, style } = props;
-  const mainConfig = useSkeleton();
-
-  const config: SkeletonConfig = useMemo(
-    () => ({
-      ...mainConfig,
-      ...overrideConfig,
-      style: { ...mainConfig.style, ...overrideConfig?.style, ...style },
-    }),
-    [overrideConfig, mainConfig]
-  );
+  const config = createConfig(overrideConfig, style);
 
   if (loading) {
     return <SkeletonElement config={config}>{children}</SkeletonElement>;
