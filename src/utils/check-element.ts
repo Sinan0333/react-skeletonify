@@ -11,18 +11,12 @@ export const isTextElement = (elementType: string): boolean => {
 
 export const isSkeletonIgnoreComponent = (
   element: React.ComponentType<any> | string
-): boolean => {
-  return element === SkeletonIgnore;
-};
+): boolean => element === SkeletonIgnore;
 
 export const isSkeletonKeepComponent = (
   element: React.ComponentType<any> | string
-): boolean => {
-  return element === SkeletonKeep;
-};
+): boolean => element === SkeletonKeep;
 
 export const isSkeletonUniteComponent = (
   element: React.ComponentType<any> | string
-): boolean => {
-  return element === SkeletonUnite;
-};
+): boolean => element === SkeletonUnite;
