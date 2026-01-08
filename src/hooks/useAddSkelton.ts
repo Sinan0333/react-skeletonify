@@ -17,8 +17,9 @@ function useAddSkelton(config: SkeletonConfig) {
   const style = createStyle(config);
 
   const addSkeleton = (node: React.ReactNode): React.ReactNode => {
-    if (!React.isValidElement(node))
+    if (!React.isValidElement(node)) {
       return createNodeWrapper(node as any, CLASS_NAME, style);
+    }
 
     const element = node as React.ReactElement<any>;
     const { children } = element.props;
@@ -31,15 +32,8 @@ function useAddSkelton(config: SkeletonConfig) {
     }
 
     if (typeof elementType === "string") {
-      if (exceptTags.includes(elementType)) {
-        return element;
-      }
-      const isRestrictedGroupTag = checkTagInGroup(
-        elementType,
-        exceptTagGroups
-      );
-
-      if (isRestrictedGroupTag) return element;
+      if (exceptTags.includes(elementType)) return element;
+      if (checkTagInGroup(elementType, exceptTagGroups)) return element;
     }
 
     const hasChildren = React.Children.count(children) > 0;
@@ -50,9 +44,7 @@ function useAddSkelton(config: SkeletonConfig) {
       return addSkeleton(rendered);
     }
 
-    const isTextTag = isTextElement(elementType);
-
-    if (isTextTag) {
+    if (isTextElement(elementType)) {
       return createLeafNode(element, CLASS_NAME, {
         ...style,
         margin: textTagsMargin,
